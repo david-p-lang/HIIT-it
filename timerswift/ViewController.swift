@@ -12,19 +12,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var setupBarButton:UIButton = UIButton()
     var workoutBarButton:UIButton = UIButton()
 
-    //connection variables
+    //connection
     let heartRateDisplay:UILabel = UILabel()
     let scanButton:UIButton = UIButton()
     let promptConnect = UILabel()
     
-    //setup variables
+    //setup
     let HRGModButton:UIButton = UIButton()
     let intModButton:UIButton = UIButton()
     let restModButton:UIButton = UIButton()
     let warmupModButton:UIButton = UIButton()
     let cooldownModButton:UIButton = UIButton()
     
-    //workout screen variables
+    //workout screen 
     let displayView:UIView = UIView()
     let workoutPhaseDes:UILabel = UILabel()
     let timeLabelDes:UILabel = UILabel()
@@ -104,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             //audioResponse:AnyObject = avas.setPreferredOutputNumberOfChannels(3) as AnyObject
         //catch
         do {
-        try avas.setCategory(AVAudioSessionCategoryAmbient)
+            try avas.setCategory(AVAudioSession.Category.ambient)
         } catch  {
             print("/(Error)")
         }
@@ -125,7 +125,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func setupScreen() {
         imageView.image = UIImage(named: "launchimage")
-        imageView.contentMode = UIViewContentMode.center
+        imageView.contentMode = UIView.ContentMode.center
         let connectionWidth = Int(self.view.bounds.width/3)
         let setupWidth = connectionWidth
         let workoutButtonWidth = connectionWidth + 3 //connectionWidth * 2 - Int(self.view.bounds.width)
