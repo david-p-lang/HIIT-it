@@ -24,18 +24,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let warmupModButton:UIButton = UIButton()
     let cooldownModButton:UIButton = UIButton()
     
-    //workout screen 
     let displayView:UIView = UIView()
-    let workoutPhaseDes:UILabel = UILabel()
-    let timeLabelDes:UILabel = UILabel()
-    let hrLabelDes:UILabel = UILabel()
-    let nextSegLabelDes:UILabel = UILabel()
-    let workoutPhase:UILabel = UILabel()
-    let timeLabel:UILabel = UILabel()
-    let hrLabel:UILabel = UILabel()
-    let nextSegLabel:UILabel = UILabel()
-    let nextGoalLabel:UILabel = UILabel()
-    let adjustGoalLabel:UILabel = UILabel()
+ 
+    @IBOutlet weak var workoutPhase: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var hrLabel: UILabel!
+    @IBOutlet weak var nextSegLabel: UILabel!
+    @IBOutlet weak var nextGoalLabel: UILabel!
+    
+
     let startButton:UIButton = UIButton()
     let nextPhaseButton:UIButton = UIButton()
     let songTitle: UILabel = UILabel()
@@ -70,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var notification:NotificationCenter = NotificationCenter.default
 
     
-    //Music variables
+    //Music 
     var mediaQuery = MPMediaQuery.playlists()
     var playlists:[AnyObject]!
     var musicPlayer:AVQueuePlayer!
@@ -83,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var playlistHasBeenOpened = true
     var musicDefaults = UserDefaults.standard
     
-    //AUDIO PLAYER VARIABLES
+    //AUDIO PLAYER
     
     var theVoice = VoiceGuide()
     var alarmSound = NSURL()
