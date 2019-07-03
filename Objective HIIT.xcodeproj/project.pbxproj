@@ -19,18 +19,7 @@
 		63BE30901A77064C008B32F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE308E1A77064C008B32F4 /* Main.storyboard */; };
 		63BE30921A77064C008B32F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE30911A77064C008B32F4 /* Images.xcassets */; };
 		63BE30951A77064C008B32F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BE30931A77064C008B32F4 /* LaunchScreen.xib */; };
-		63BE30A11A77064C008B32F4 /* timerswiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE30A01A77064C008B32F4 /* timerswiftTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		63BE309B1A77064C008B32F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63BE307D1A77064C008B32F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63BE30841A77064C008B32F4;
-			remoteInfo = timerswift;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		63410F6F1B26859E002A03C4 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -47,20 +36,12 @@
 		63BE308F1A77064C008B32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BE30911A77064C008B32F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63BE30941A77064C008B32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		63BE309A1A77064C008B32F4 /* Objective HIITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Objective HIITTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63BE309F1A77064C008B32F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BE30A01A77064C008B32F4 /* timerswiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timerswiftTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		63BE30821A77064C008B32F4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BE30971A77064C008B32F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -83,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				63BE30851A77064C008B32F4 /* Objective HIIT.app */,
-				63BE309A1A77064C008B32F4 /* Objective HIITTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,24 +133,6 @@
 			productReference = 63BE30851A77064C008B32F4 /* Objective HIIT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		63BE30991A77064C008B32F4 /* Objective HIITTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 63BE30A71A77064C008B32F4 /* Build configuration list for PBXNativeTarget "Objective HIITTests" */;
-			buildPhases = (
-				63BE30961A77064C008B32F4 /* Sources */,
-				63BE30971A77064C008B32F4 /* Frameworks */,
-				63BE30981A77064C008B32F4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				63BE309C1A77064C008B32F4 /* PBXTargetDependency */,
-			);
-			name = "Objective HIITTests";
-			productName = timerswiftTests;
-			productReference = 63BE309A1A77064C008B32F4 /* Objective HIITTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,10 +152,6 @@
 							};
 						};
 					};
-					63BE30991A77064C008B32F4 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 63BE30841A77064C008B32F4;
-					};
 				};
 			};
 			buildConfigurationList = 63BE30801A77064C008B32F4 /* Build configuration list for PBXProject "Objective HIIT" */;
@@ -211,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				63BE30841A77064C008B32F4 /* Objective HIIT */,
-				63BE30991A77064C008B32F4 /* Objective HIITTests */,
 			);
 		};
 /* End PBXProject section */
@@ -224,13 +181,6 @@
 				63BE30901A77064C008B32F4 /* Main.storyboard in Resources */,
 				63BE30951A77064C008B32F4 /* LaunchScreen.xib in Resources */,
 				63BE30921A77064C008B32F4 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63BE30981A77064C008B32F4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,23 +203,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63BE30961A77064C008B32F4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				63BE30A11A77064C008B32F4 /* timerswiftTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		63BE309C1A77064C008B32F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63BE30841A77064C008B32F4 /* Objective HIIT */;
-			targetProxy = 63BE309B1A77064C008B32F4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		63BE308E1A77064C008B32F4 /* Main.storyboard */ = {
@@ -406,40 +340,6 @@
 			};
 			name = Release;
 		};
-		63BE30A81A77064C008B32F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = timerswiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Objective HIITTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timerswift.app/timerswift";
-			};
-			name = Debug;
-		};
-		63BE30A91A77064C008B32F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = timerswiftTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "Objective HIITTests";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timerswift.app/timerswift";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -457,15 +357,6 @@
 			buildConfigurations = (
 				63BE30A51A77064C008B32F4 /* Debug */,
 				63BE30A61A77064C008B32F4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		63BE30A71A77064C008B32F4 /* Build configuration list for PBXNativeTarget "Objective HIITTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				63BE30A81A77064C008B32F4 /* Debug */,
-				63BE30A91A77064C008B32F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
