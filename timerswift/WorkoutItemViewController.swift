@@ -1,13 +1,10 @@
 import UIKit
 
 class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
-        return 0
-    }
+
     
     
-    var itemKey = "-"
+    var itemKey = "Rest Time"
     var itemValue = "60"
     var intSeconds = 0
     var intMinutes = 0
@@ -37,6 +34,71 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
     var itemEdit: UITextField!
     var vStack: UIStackView!
     
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        
+        stackConfiguration()
+        stackContraints()
+        itemLabelConfiguration()
+        itemLabelConstraints()
+        itemTextConfiguration()
+        itemTextConstraints()
+        
+        
+        pickerView = UIPickerView()
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.backgroundColor = .purple
+        vStack.addArrangedSubview(pickerView)
+        
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
+        pickerView.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
+        
+        
+        spinnerBackView = UIView()
+        itemEdit = UITextField()
+        
+        itemLabel.text = itemKey
+        print("itemkey is " + itemKey)
+        
+        
+        for i in 0...59 {
+            self.spinnerSeconds[i] = "\(i)"
+        }
+        for i in 0...9 {
+            self.spinnerMinutes[i] = i.description
+        }
+        
+//        if itemKey == "Rest Time" || itemKey == "Warmup Time" || itemKey == "Cooldown Time" {
+//            displayInitTime()
+//            pickerView.isHidden = false
+//            spinnerBackView.isHidden = false
+//            itemText.isHidden = false
+//        } else {
+//            itemText.text = itemValue
+//            itemEdit.isHidden = false
+//            itemEdit.keyboardType = UIKeyboardType.numberPad
+//        }
+//
+        
+        // Do any additional setup after loading the view.
+    }
+    func displayInitTime () {
+        displayMinuteTime = String(Int(itemValue)! / 60) + ":"
+        if Int(itemValue)! % 60 < 10 {
+            displaySecondsTime = "0" + String(Int(itemValue)! % 60)
+        } else {
+            displaySecondsTime = "0" + String(Int(itemValue)! % 60)
+        }
+        itemText.text = displayMinuteTime + displaySecondsTime
+        
+    }
+    
     fileprivate func stackConfiguration() {
         vStack = UIStackView(frame: view.frame)
         vStack.alignment = .fill
@@ -62,20 +124,21 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
         itemLabel.backgroundColor = .orange
         itemLabel.text = itemKey
         vStack.addArrangedSubview(itemLabel)
-
+        
     }
     
     fileprivate func itemLabelConstraints() {
         itemLabel.translatesAutoresizingMaskIntoConstraints = false
         itemLabel.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
         itemLabel.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
-
+        
     }
     
     fileprivate func itemTextConfiguration() {
         itemText = UILabel()
         itemText.backgroundColor = .magenta
         itemText.text = "--replace--"
+        itemText.textAlignment = .center
         vStack.addArrangedSubview(itemText)
     }
     
@@ -85,56 +148,6 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
         itemText.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
-        stackConfiguration()
-        stackContraints()
-        itemLabelConfiguration()
-        itemLabelConstraints()
-        itemTextConfiguration()
-        itemTextConstraints()
-        
-        
-        pickerView = UIPickerView()
-        spinnerBackView = UIView()
-        itemEdit = UITextField()
-        
-        itemLabel.text = itemKey
-        print("itemkey is " + itemKey)
-        
-        
-        for i in 0...59 {
-            self.spinnerSeconds[i] = "\(i)"
-        }
-        for i in 0...9 {
-            self.spinnerMinutes[i] = i.description
-        }
-        
-        if itemKey == "Rest Time" || itemKey == "Warmup Time" || itemKey == "Cooldown Time" {
-            displayInitTime()
-            pickerView.isHidden = false
-            spinnerBackView.isHidden = false
-            itemText.isHidden = false
-        } else {
-            itemText.text = itemValue
-            itemEdit.isHidden = false
-            itemEdit.keyboardType = UIKeyboardType.numberPad
-        }
-        
-        // Do any additional setup after loading the view.
-    }
-    func displayInitTime () {
-        displayMinuteTime = String(Int(itemValue)! / 60) + ":"
-        if Int(itemValue)! % 60 < 10 {
-            displaySecondsTime = "0" + String(Int(itemValue)! % 60)
-        } else {
-            displaySecondsTime = "0" + String(Int(itemValue)! % 60)
-        }
-        itemText.text = displayMinuteTime + displaySecondsTime
-        
-    }
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         self.view.endEditing(true)
         return false
@@ -202,7 +215,12 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
             return spinnerSeconds.count
         }
     }
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) -> Int {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0 {
             intMinutes = row
             minutes = spinnerMinutes[row] as! String
@@ -218,7 +236,6 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
             }
             itemText.text = displayMinuteTime + displaySecondsTime
         }
-        return component
         
     }
     private func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
