@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,7 +16,6 @@
 		63BDA7001B05494B007C93C0 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BDA6FF1B05494B007C93C0 /* Workout.swift */; };
 		63BE308B1A77064C008B32F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE308A1A77064C008B32F4 /* AppDelegate.swift */; };
 		63BE308D1A77064C008B32F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BE308C1A77064C008B32F4 /* ViewController.swift */; };
-		63BE30901A77064C008B32F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BE308E1A77064C008B32F4 /* Main.storyboard */; };
 		63BE30921A77064C008B32F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63BE30911A77064C008B32F4 /* Images.xcassets */; };
 		63BE30951A77064C008B32F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63BE30931A77064C008B32F4 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
@@ -33,7 +32,6 @@
 		63BE30891A77064C008B32F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63BE308A1A77064C008B32F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63BE308C1A77064C008B32F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		63BE308F1A77064C008B32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63BE30911A77064C008B32F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		63BE30941A77064C008B32F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		63BE309F1A77064C008B32F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 				636EBF991B17868F002B7024 /* WorkoutItemViewController.swift */,
 				63BDA6FD1B054913007C93C0 /* HeartRateLEMonitor.swift */,
 				63BDA6FF1B05494B007C93C0 /* Workout.swift */,
-				63BE308E1A77064C008B32F4 /* Main.storyboard */,
 				63410F6F1B26859E002A03C4 /* ResultsViewController.swift */,
 				63BE30911A77064C008B32F4 /* Images.xcassets */,
 				63BE30931A77064C008B32F4 /* LaunchScreen.xib */,
@@ -155,7 +152,7 @@
 				};
 			};
 			buildConfigurationList = 63BE30801A77064C008B32F4 /* Build configuration list for PBXProject "Objective HIIT" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -178,7 +175,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63BE30901A77064C008B32F4 /* Main.storyboard in Resources */,
 				63BE30951A77064C008B32F4 /* LaunchScreen.xib in Resources */,
 				63BE30921A77064C008B32F4 /* Images.xcassets in Resources */,
 			);
@@ -206,14 +202,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		63BE308E1A77064C008B32F4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				63BE308F1A77064C008B32F4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		63BE30931A77064C008B32F4 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -315,8 +303,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7AR6LWAY36;
 				INFOPLIST_FILE = timerswift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmx.davidlang.Objective-HIIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -331,8 +322,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7AR6LWAY36;
 				INFOPLIST_FILE = timerswift/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gmx.davidlang.Objective-HIIT";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

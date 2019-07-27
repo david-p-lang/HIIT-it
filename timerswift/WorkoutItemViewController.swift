@@ -7,7 +7,7 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     
-    var itemKey = ""
+    var itemKey = "-"
     var itemValue = "60"
     var intSeconds = 0
     var intMinutes = 0
@@ -30,14 +30,65 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
     var spinnerSeconds:NSMutableArray = []
     var spinnerMinutes:NSMutableArray = []
     
-    @IBOutlet weak var itemLabel: UILabel!
-    @IBOutlet weak var itemText: UILabel!
-    @IBOutlet weak var theSpinner: UIPickerView!
-    @IBOutlet weak var spinnerBackView: UIView!
-    @IBOutlet weak var itemEdit: UITextField!
+    var itemLabel: UILabel!
+    var itemText: UILabel!
+    var pickerView: UIPickerView!
+    var spinnerBackView: UIView!
+    var itemEdit: UITextField!
+    var vStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        vStack = UIStackView(frame: view.frame)
+        vStack.alignment = .fill
+        vStack.distribution = .fillEqually
+        vStack.axis = .vertical
+        vStack.backgroundColor = .red
+        
+        view.addSubview(vStack)
+
+
+        vStack.translatesAutoresizingMaskIntoConstraints = false
+        vStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        vStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        vStack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        vStack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        vStack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        vStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        
+        itemLabel = UILabel()
+        itemLabel.backgroundColor = .orange
+        itemLabel.text = itemKey
+        
+        view.addSubview(itemLabel)
+
+        itemLabel.translatesAutoresizingMaskIntoConstraints = false
+        itemLabel.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
+        itemLabel.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
+
+        vStack.addArrangedSubview(itemLabel)
+
+        itemText = UILabel()
+        itemText.backgroundColor = .magenta
+        itemText.text = "hi"
+        
+        view.addSubview(itemText)
+        
+        itemText.translatesAutoresizingMaskIntoConstraints = false
+        itemText.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
+        itemText.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
+        
+        vStack.addArrangedSubview(itemText)
+        
+        
+        itemText = UILabel()
+        pickerView = UIPickerView()
+        spinnerBackView = UIView()
+        itemEdit = UITextField()
         
         itemLabel.text = itemKey
         print("itemkey is " + itemKey)
@@ -52,7 +103,7 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
         
         if itemKey == "Rest Time" || itemKey == "Warmup Time" || itemKey == "Cooldown Time" {
             displayInitTime()
-            theSpinner.isHidden = false
+            pickerView.isHidden = false
             spinnerBackView.isHidden = false
             itemText.isHidden = false
         } else {
