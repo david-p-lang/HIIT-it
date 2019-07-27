@@ -37,10 +37,7 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
     var itemEdit: UITextField!
     var vStack: UIStackView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        
+    fileprivate func stackConfiguration() {
         vStack = UIStackView(frame: view.frame)
         vStack.alignment = .fill
         vStack.distribution = .fillEqually
@@ -48,8 +45,9 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
         vStack.backgroundColor = .red
         
         view.addSubview(vStack)
-
-
+    }
+    
+    fileprivate func stackContraints() {
         vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         vStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -57,35 +55,48 @@ class WorkoutItemViewController: UIViewController, UIPickerViewDataSource, UIPic
         vStack.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         vStack.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         vStack.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        
-        
+    }
+    
+    fileprivate func itemLabelConfiguration() {
         itemLabel = UILabel()
         itemLabel.backgroundColor = .orange
         itemLabel.text = itemKey
-        
-        view.addSubview(itemLabel)
+        vStack.addArrangedSubview(itemLabel)
 
+    }
+    
+    fileprivate func itemLabelConstraints() {
         itemLabel.translatesAutoresizingMaskIntoConstraints = false
         itemLabel.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
         itemLabel.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
 
-        vStack.addArrangedSubview(itemLabel)
-
+    }
+    
+    fileprivate func itemTextConfiguration() {
         itemText = UILabel()
         itemText.backgroundColor = .magenta
-        itemText.text = "hi"
-        
-        view.addSubview(itemText)
-        
+        itemText.text = "--replace--"
+        vStack.addArrangedSubview(itemText)
+    }
+    
+    fileprivate func itemTextConstraints() {
         itemText.translatesAutoresizingMaskIntoConstraints = false
         itemText.trailingAnchor.constraint(equalTo: vStack.trailingAnchor).isActive = true
         itemText.leadingAnchor.constraint(equalTo: vStack.leadingAnchor).isActive = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
         
-        vStack.addArrangedSubview(itemText)
+        stackConfiguration()
+        stackContraints()
+        itemLabelConfiguration()
+        itemLabelConstraints()
+        itemTextConfiguration()
+        itemTextConstraints()
         
         
-        itemText = UILabel()
         pickerView = UIPickerView()
         spinnerBackView = UIView()
         itemEdit = UITextField()
